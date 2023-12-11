@@ -1,0 +1,836 @@
+@import url("https://fonts.googleapis.com/css2?family=Secular+One&family=Work+Sans:ital@1&display=swap");
+
+*,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.main-bg {
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(135deg, rgb(242, 242, 242), hsl(214, 100%, 99%));
+  overflow: hidden;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 1% 6%;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100px;
+  background: linear-gradient(135deg, rgb(242, 242, 242), hsl(214, 100%, 99%));
+}
+
+nav .logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px;
+}
+
+nav a {
+  font-size: 30px;
+  font-family: "Secular One", sans-serif;
+  text-decoration: none;
+  color: #000;
+}
+
+.navbar ul li {
+  margin: 15px;
+  display: inline-block;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: #000;
+  font-size: 20px;
+}
+
+.navbar ul li a::after {
+  content: "";
+  width: 0;
+  height: 5px;
+  display: block;
+  background-color: #000;
+  transition: 0.5s;
+}
+
+.navbar ul li a:hover::after {
+  width: 100%;
+}
+
+.fa-user {
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  font-size: 35px;
+  display: inline-block;
+  vertical-align: middle;
+  cursor: pointer;
+  position: relative;
+}
+
+.profile_Menu {
+  position: absolute;
+  top: 85px;
+  right: 50px;
+  width: 200px;
+  background: #fff;
+  display: none;
+}
+
+.profile_Menu a {
+  display: block;
+  font-size: 20px;
+  text-decoration: none;
+  text-align: center;
+  color: #000;
+  width: 100%;
+  background: rgb(255, 255, 255);
+  height: 40px;
+}
+
+.profile_Menu a:hover {
+  background: #ddd;
+}
+.header-wrapper {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  padding: 20px;
+  overflow: hidden;
+}
+
+.textbox {
+  padding: 30px;
+  width: 300px;
+  position: absolute;
+  top: 30%;
+  overflow: hidden;
+  left: 10%;
+}
+
+.favorite {
+  position: absolute;
+  top: 15px;
+  left: 20px;
+}
+
+.favorite .fa-trophy {
+  color: orange;
+}
+
+.textbox h1 {
+  font-size: 80px;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  position: relative;
+  margin: 0 -500px;
+}
+
+.textbox h1:nth-child(1) {
+  animation: textAnimtionLeft 2s ease-in-out forwards;
+  animation-delay: 1s;
+}
+.textbox h1:nth-child(2) {
+  animation: textAnimtionRight 2s ease-in-out forwards;
+  animation-delay: 2s;
+}
+.textbox h1:nth-child(3) {
+  animation: textAnimtionLeft 2s ease forwards;
+  animation-delay: 3s;
+}
+
+.instructure-wrapper {
+  width: 1000px;
+  height: 500px;
+  position: absolute;
+  top: 20%;
+  left: 35%;
+  overflow: hidden;
+}
+
+.card {
+  display: inline-block;
+  width: 300px;
+  height: 100%;
+  margin: auto 10px;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  position: relative;
+  left: 1200px;
+}
+
+.card:nth-child(1) {
+  animation: HeaderCardAnimation 2s ease forwards;
+  animation-delay: 1s;
+}
+.card:nth-child(2) {
+  animation: HeaderCardAnimation 2s ease forwards;
+  animation-delay: 2s;
+}
+.card:nth-child(3) {
+  animation: HeaderCardAnimation 2s ease forwards;
+  animation-delay: 3s;
+}
+
+.instructure-img {
+  width: 100%;
+  height: 100%;
+}
+
+.layer {
+  width: 100%;
+  height: 1000px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 2;
+  margin: 0;
+  background: linear-gradient(to right, rgb(11, 10, 22), rgb(17, 2, 37));
+  transition: 1s;
+}
+
+.layer-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px;
+  background-color: transparent;
+}
+
+.layer-text h3,
+.layer-text h4 {
+  color: #fff;
+  text-align: center;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.layer-text h3 {
+  font-size: 30px;
+}
+
+.layer-text h4 {
+  font-size: 20px;
+}
+
+.btn {
+  position: absolute;
+  top: 65%;
+  left: 30%;
+  width: 250px;
+  height: 70px;
+  text-decoration: none;
+  font-weight: 800;
+  line-height: 70px;
+  text-align: center;
+  font-size: 25px;
+  background: #000;
+  color: #fff;
+  border-radius: 10px;
+  transition: 1s;
+  opacity: 0;
+  animation: buttonAnimation 1s ease forwards;
+  animation-delay: 2.5s;
+}
+
+.btn:hover {
+  width: 300px;
+}
+
+.btn,
+.btn i {
+  margin: 0 10px;
+}
+
+@keyframes textAnimtionLeft {
+  0% {
+    margin: 0 -500px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+@keyframes textAnimtionRight {
+  0% {
+    margin: 0 500px;
+  }
+  100% {
+    margin: 0;
+  }
+}
+
+@keyframes HeaderCardAnimation {
+  0% {
+    left: 1200px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes buttonAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #000000 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #000000;
+  border-radius: 10px;
+  border: 3px inset #ffffff;
+}
+
+#welcomeText {
+  width: 100%;
+  height: 1000px;
+}
+
+.row {
+  margin: 5% auto;
+}
+
+.welcome-wrapper {
+  width: 80%;
+  height: 500px;
+  margin: 5% auto;
+  display: flex;
+}
+
+.textbox-right {
+  width: 500px;
+  height: 200px;
+  margin: auto;
+}
+
+.textbox-right h1 {
+  margin: 10px auto;
+  font-size: 40px;
+  font-family: "Secular One", sans-serif;
+}
+
+.textbox-right p {
+  font-size: 18px;
+  margin-top: 20px;
+  font-family: "Work Sans", sans-serif;
+  margin-bottom: 30px;
+}
+
+.textbox-right .join-btn {
+  border: 3px solid #000;
+  padding: 10px 40px;
+  border-radius: 20px;
+  text-decoration: none;
+  color: #000;
+  font-size: 19px;
+  transition: 1s;
+  font-family: "Work Sans", sans-serif;
+}
+
+.textbox-right .join-btn:hover {
+  background: #000;
+  color: #fff;
+}
+
+.courser-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.course-nav {
+  text-align: center;
+}
+
+.course-nav button {
+  width: 150px;
+  height: 40px;
+  margin: 0 20px;
+  margin-top: 20px;
+  color: rgb(120, 110, 110);
+  cursor: pointer;
+  font-size: 20px;
+  font-family: "Secular One", sans-serif;
+  background-color: #fff;
+  border: none;
+}
+
+.course-nav button:hover {
+  color: #000000;
+}
+
+.course-list-wrapper {
+  margin: 50px auto;
+  width: 80%;
+  height: 500px;
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.course-list-wrapper .course-card {
+  display: inline-block;
+  width: 320px;
+  height: 400px;
+  margin: 40px 20px;
+  background-color: #fefafa;
+  border-radius: 20px;
+  position: relative;
+  box-shadow: 10px 10px 15px rgb(213, 205, 205);
+}
+
+.course-card img {
+  width: 320px;
+  height: 200px;
+  border-radius: 20px 20px 0 0;
+}
+
+.course-textbox {
+  position: absolute;
+  top: 50%;
+}
+
+.course-textbox h1,
+.course-textbox h4,
+.course-textbox p {
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  margin: 10px 30px;
+  text-align: left;
+}
+
+.course-textbox p {
+  margin-bottom: 20px;
+  font-family: sans-serif;
+}
+
+.course-btn {
+  border: 4px solid #000;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 8px 40px;
+  transition: 0.5s;
+  font-family: sans-serif;
+  background-color: #000;
+}
+
+.course-btn:hover {
+  background-color: rgb(53, 50, 50);
+  color: #fefafa;
+  padding: 10px;
+}
+
+.more-btn,
+.less-btn {
+  text-align: center;
+  width: 100px;
+  height: 40px;
+  background-color: #000;
+  color: #ffffff;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.less-btn {
+  display: none;
+}
+
+#course-active {
+  color: #000000;
+}
+
+#newSlide {
+  position: absolute;
+  top: 0;
+  left: 5.3%;
+}
+
+.wrapper-tech {
+  position: relative;
+  top: 0;
+  left: 0;
+  transition: 3s;
+  display: none;
+}
+
+#AllCourse {
+  left: 0;
+  transition: 3s;
+  position: relative;
+  z-index: 1;
+}
+
+.customer-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.customer-card-wrapper {
+  width: 80%;
+  height: 700px;
+  background: linear-gradient(135deg, #ffffff, rgb(255, 255, 255));
+  border: 4px solid #000;
+  overflow: hidden;
+  justify-content: center;
+  display: flex;
+  border-radius: 20px;
+  box-shadow: 0 10px 10px;
+}
+
+.customerSlideLeft {
+  margin: 40px;
+  width: 100%;
+}
+
+.customerSlideLeft h1 {
+  font-size: 30px;
+  font-family: "Secular One", sans-serif;
+}
+
+.username p {
+  font-family: "Work Sans", sans-serif;
+}
+
+.linebox {
+  width: 190px;
+  height: 10px;
+  background: rgb(34, 27, 27);
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.marble {
+  width: 20px;
+  height: 20px;
+  position: relative;
+  background-color: #ffffff;
+  animation: marbleAnimation 1s ease forwards infinite;
+}
+
+@keyframes marbleAnimation {
+  0% {
+    left: 0;
+  }
+  100% {
+    left: 172px;
+  }
+}
+
+.testimoni-wrapper {
+  margin: 10% 0;
+  width: 400px;
+  height: 100px;
+  background-color: #111;
+  border-radius: 20px;
+  border: 3px solid #000;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+.testimoni-wrapper img {
+  border-radius: 50%;
+  border: 2px solid #000;
+  margin-left: 20px;
+}
+
+.username {
+  margin: auto;
+}
+
+.customerSlideRight {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.testimoni-textbox {
+  width: 90%;
+  height: 400px;
+  background-color: #0b2d41;
+  border: 3px solid #000;
+  border-radius: 20px;
+  margin-right: 60px;
+  display: flex;
+  justify-content: center;
+  display: none;
+}
+
+.box {
+  width: 80%;
+  margin: 100px auto;
+}
+.testimoni-textbox h3 {
+  color: #fff;
+  text-align: left;
+  font-family: "Secular One", sans-serif;
+}
+
+.testimoni-textbox p {
+  color: #ffffff;
+  font-family: "Work Sans", sans-serif;
+}
+
+.star-icon {
+  color: orange;
+  margin: 20px auto;
+}
+
+#defaultTextBox {
+  display: block;
+}
+
+footer {
+  width: 100%;
+  height: 300px;
+  background: #f4f5f6;
+  overflow: hidden;
+  margin-top: 5%;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.footer-textbox {
+  width: 400px;
+  height: 200px;
+  margin: -20px 30px;
+}
+
+.footer-textbox img {
+  display: inline-block;
+  vertical-align: middle;
+  margin: 0 10px;
+}
+
+.footer-textbox h1 {
+  font-family: "Secular One", sans-serif;
+  font-size: 30px;
+  text-align: left;
+}
+
+.footer-textbox p {
+  text-align: left;
+  margin: 10px auto;
+}
+
+.footer-textbox h4 {
+  text-align: left;
+}
+
+.contact-box {
+  text-align: left;
+}
+
+.contact-box h1 {
+  font-size: 30px;
+  font-family: "Secular One", sans-serif;
+}
+
+input[type="email"] {
+  margin: 10px 0;
+  background-color: transparent;
+  border: none;
+  font-size: 17px;
+}
+
+input[type="email"]:focus {
+  border: none;
+  outline: none;
+}
+
+.contact-icon {
+  margin: 15px auto;
+}
+
+.contact-icon a {
+  color: #000;
+  margin: 10px;
+  font-size: 23px;
+}
+
+.menu-icon {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .instructure-wrapper {
+    display: none;
+  }
+
+  .btn {
+    margin-top: 80px;
+    left: 50px;
+  }
+
+  nav {
+    flex-direction: column;
+  }
+
+  .navbar ul {
+    width: 200px;
+    height: 100vh;
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: -200px;
+    background: rgb(0, 0, 0);
+    transition: 1s;
+  }
+  .navbar ul li {
+    margin: 0;
+    margin: 40px 10px;
+    display: flex;
+  }
+
+  .navbar ul li a,
+  .fa-user {
+    font-size: 19px;
+    color: #fff;
+  }
+
+  .profile_Menu {
+    top: 55%;
+  }
+  .menu-icon {
+    font-size: 40px;
+    color: rgb(1, 0, 0);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+    display: block;
+  }
+
+  .welcome-wrapper {
+    height: auto;
+    flex-direction: column;
+  }
+  .textbox-left {
+    margin-left: -30px;
+  }
+
+  .textbox-right {
+    margin-top: 30px;
+    width: 100%;
+    height: 300px;
+  }
+  .textbox-left img {
+    width: 350px;
+  }
+  .textbox-right h1 {
+    font-size: 40px;
+  }
+
+  .textbox-right img {
+    display: none;
+  }
+  #hidden {
+    display: none;
+  }
+
+  .course-list-wrapper {
+    width: 100%;
+    height: 5800px;
+  }
+  .course-nav {
+    display: none;
+  }
+
+  #more {
+    display: none;
+  }
+  .customer-card-wrapper {
+    width: 100%;
+    flex-direction: column;
+    align-items: flex-end;
+  }
+
+  .testimoni-wrapper {
+    background-color: transparent;
+    border: none;
+  }
+
+  .testimoni-wrapper img {
+    margin-left: 50px;
+  }
+
+  .customerSlideLeft {
+    display: flex;
+    position: relative;
+  }
+  .customer-wrapper {
+    height: 1000px;
+  }
+
+  .customerSlideLeft h1 {
+    position: absolute;
+    top: -40px;
+    left: 50px;
+  }
+
+  .customerSlideLeft .linebox {
+    position: absolute;
+    left: 50px;
+  }
+
+  .username {
+    display: none;
+  }
+
+  .testimoni-textbox {
+    margin-left: 50px;
+  }
+  .box {
+    width: 100%;
+  }
+
+  footer {
+    height: 500px;
+  }
+
+  .footer-wrapper {
+    flex-direction: column;
+  }
+
+  .footer-textbox {
+    width: 80%;
+    margin-top: 40px;
+  }
+
+  .footer-textbox p {
+    font-size: 20px;
+  }
+  .contact-box {
+    width: 100%;
+  }
+}

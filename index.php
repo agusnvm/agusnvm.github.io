@@ -1,0 +1,559 @@
+<?php
+session_start();
+
+// Check if the user is not logged in
+if(!isset($_SESSION['username'])) {
+  header("Location: index.html"); // Redirect to index.html if not logged in
+  exit;
+}
+
+// Your index.php content goes here
+echo "Welcome, ".$_SESSION['username']."!";
+?>
+
+
+!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GSOFT</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="icon" href="img/Logo/logo.jpg">
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <!-- header start -->
+    <div class="main-bg">
+      <!-- header content -->
+      <div class="header-wrapper">
+      <div class="textbox">
+          <h1>Tonton.</h1>
+          <h1>Pelajari.</h1>
+          <h1>Berkembang.</h1>
+        </div>
+        <div class="instructure-wrapper">
+          <div class="card">
+            <!-- instructure img -->
+            <img src="img/Person/Person1.jpg" alt="instructure" class="instructure-img" onmouseenter="layerAnimationIn()" onmouseleave="layerAnimationOut()" />
+            <div class="layer" id="layer">
+              <div class="layer-text">
+                <h3 style="text-align:left;">
+                  KURSUS <br/>
+                  TEKNOLOGI
+                </h3>
+                <h4><i class="fa-solid fa-laptop-code"></i>Topics<br />100</h4>
+              </div>
+            </div>
+            <div class="favorite">
+              <i class="fa-solid fa-trophy" style="font-size: 30px"></i>
+            </div>
+          </div>
+          <div class="card">
+            <!-- instructure img -->
+            <img src="img/Person/Person2.jpg" alt="instructure" class="instructure-img" onmouseenter="layerAnimationIn2()" onmouseleave="layerAnimationOut2()" />
+            <div class="layer" id="layer2">
+              <div class="layer-text">
+                <h3 style="text-align:left;">
+                  KURSUS<br />
+                  MEMASAK
+                </h3>
+                <h4><i class="fa-solid fa-laptop-code"></i>Topics<br />100</h4>
+              </div>
+            </div>
+            <div class="favorite">
+              <i class="fa-solid fa-trophy" style="font-size: 30px"></i>
+            </div>
+          </div>
+          <div class="card">
+            <!-- instructure img -->
+            <img src="img/Person/Person3.jpg" alt="instructure" class="instructure-img" onmouseenter="layerAnimationIn3()" onmouseleave="layerAnimationOut3()" />
+            <div class="layer" id="layer3">
+              <div class="layer-text">
+                <h3 style="text-align:left;">
+                  KURSUS<br />
+                  SENI DIGITAL
+                </h3>
+                <h4><i class="fa-solid fa-laptop-code"></i>Topics<br />100</h4>
+              </div>
+            </div>
+            <div class="favorite">
+              <i class="fa-solid fa-trophy" style="font-size: 30px"></i>
+            </div>
+          </div>
+        </div>
+        <a href="#" class="btn" id="headerBtn">Gabung Dengan Kami <i class="fa-solid fa-arrow-right"></i></a>
+      </div>
+      <nav>
+        <!-- logo -->
+        <h1>
+          <a href=""><img src="img/Logo/logo.jpg" alt="logo" width="45" height="45" class="logo" /> GSOFT</a>
+        </h1>
+
+        <!-- navbar -->
+        <div class="navbar" >
+          <ul id="nav">
+          <li><a href="#abutme">TENTANG KAMI</a></li>
+            <li><a href="#course">PROMOSI</a></li>
+            <li><a href="#COURSE">KURSUS</a></li>
+            <li><a href="#customer">TESTIMONI</a></li>
+            <li><i class="fa-solid fa-user" onclick="profileUser()"></i></li>
+            <div class="profile_Menu" id="profile">
+              <a>Welcome Admin</a>
+              <a href="logout.php" >Keluar</a>
+            </div>
+          </ul>
+        </div>
+        <div class="menu-icon" onclick="menuListBar()">
+          <i class="fa-solid fa-bars" ></i>
+        </div>
+      </nav>
+    </div>
+    <!-- header end -->
+
+    <!-- About Me Start -->
+ 
+    <section id="abutme">
+          <div class="row">
+            <div class="welcome-wrapper">
+              <div class="textbox-left">
+                <img src="img/Person/aboutme.png" alt="about-pict">
+              </div>
+              <div class="textbox-right">
+                <h1>Mengapa Memilih Kami?</h1>
+                <p>Kami menyediakan kursus online berkualitas tinggi dengan instruktur yang berpengalaman. Bergabunglah dengan ribuan siswa untuk meningkatkan keterampilan Anda.</p>
+                <a href="#" class="join-btn">Gabung Sekarang</a> 
+              </div>
+              </div>
+            </div>
+            <div class="welcome-wrapper" id="hidden">
+              <div class="textbox-right">
+                <h1>Apa Saja yang Bisa Anda Pelajari?</h1>
+                <p>Kami menawarkan ratusan kursus di bidang teknologi, bisnis, desain, fotografi, musik, dan banyak lagi. Diajar oleh para profesional di bidangnya masing-masing.</p>
+                <a href="#" class="join-btn">Gabung Sekarang</a> 
+              </div>
+                <img src="img/Person/aboutme.png" alt="about-pict">
+              </div>
+            </div>
+        </div>
+      </section>
+    </div>
+    <!-- About Me End -->
+
+    <!-- Course start -->
+    <section id="COURSE">
+      <div class="courser-wrapper">
+        <div class="row">
+
+          <!-- courser-nav -->
+          <div class="course-nav">
+            <button id="course-active">SEMUA</button>
+            <button  id="tech-active">TEKNOLOGI</button>
+            <button  id="sport-active">OLAHRAGA</button>
+            <button  id="cooking-active">MEMASAK</button>
+            <button id="acting-active">SENI</button>
+          </div>
+          <!-- course-list -->
+          <div class="course-list-wrapper" id="CourserList">
+
+            <section id="AllCourse">
+            <div class="course-card" >
+              <img src="img/Person/tech.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>HTML,CSS & JS </h1>
+                <h4>$45</h4>
+                <p>Pelajari dasar-dasar HTML, CSS, dan JavaScript untuk membangun situs web yang menarik. Kursus interaktif ini cocok untuk pemula.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/tech2.png" alt="course">
+              <div class="course-textbox">
+                <h1>EXCEL </h1>
+                <h4>$45</h4>
+                <p>LKuasai fungsi dan formula Excel untuk menganalisis data dan membuat laporan yang informatif. Termasuk latihan praktis.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/tech3.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>POWERPOINT</h1>
+                <h4>$45</h4>
+                <p>Buat presentasi yang mengesankan dengan tips dan trik PowerPoint dari para ahli. Sisipkan video, animasi, dan lainnya.</p>
+                <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/sport1.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>TAKEWONDO </h1>
+                <h4>$45</h4>
+                <p>Pelajari teknik dasar taekwondo dari Sabuk Putih hingga Sabuk Hitam dari instruktur bersertifikat.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/sport.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>BASKET </h1>
+                <h4>$45</h4>
+                <p>Tingkatkan permainan basket Anda dengan pelatihan yang dipersonalisasi dari pelatih NBA.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/sport3.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>TENNIS </h1>
+                <h4>$45</h4>
+                <p>Kuasai pukulan tenis dasar dan mahir bermain di lapangan dalam 12 minggu.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/Chef.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>MEMASAK DASAR </h1>
+                <h4>$45</h4>
+                <p>Pelajari cara memasak nasi goreng, mie goreng, sup, dan lauk pauk dengan resep tradisional.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/Chef.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>MEMASAK LANJUTAN </h1>
+                <h4>$45</h4>
+                <p>Tingkatkan kemampuan memasak Anda dengan mempelajari hidangan internasional dari chef profesional.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/Chef.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>CHEF PROFESIONAL </h1>
+                <h4>$45</h4>
+                <p>Siapkan diri menjadi chef profesional dengan sertifikasi memasak internasional.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/art3.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>SENI DASAR </h1>
+                <h4>$45</h4>
+                <p>Pelajari prinsip-prinsip seni rupa seperti perspektif, anatomi, pencahayaan, dan lainnya.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/art2.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>SENI DIGITAL </h1>
+                <h4>$45</h4>
+                <p>Kuasai software desain grafis seperti Adobe Photoshop, Illustrator, dan InDesign.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card" >
+              <img src="img/Person/art1.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>SENI KANVAS </h1>
+                <h4>$45</h4>
+                <p>Belajar melukis di atas kanvas dengan berbagai media seperti cat air, cat minyak, dan lainnya.</p>
+                <a href="#" class="course-btn">Gabung Kursus  <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </section>
+
+            <!-- tech -->
+
+            <section id="newSlide">
+              <div class="wrapper-tech" id="changeSlide">
+            <div class="course-card">
+              <img src="img/Person/tech.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>HTML, CSS & JS</h1>
+                <h4>$45</h4>
+                <p>Pelajari dasar-dasar HTML, CSS, dan JavaScript untuk membangun situs web yang menarik. Kursus interaktif ini cocok untuk pemula.</p>
+                <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card">
+              <img src="img/Person/tech2.png" alt="course">
+              <div class="course-textbox">
+                <h1>EXCEL</h1>
+                <h4>$45</h4>
+                <p>Kuasai fungsi dan formula Excel untuk menganalisis data dan membuat laporan yang informatif. Termasuk latihan praktis.</p>
+                <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+            <div class="course-card">
+              <img src="img/Person/tech3.jpg" alt="course">
+              <div class="course-textbox">
+                <h1>POWERPOINT</h1>
+                <h4>$45</h4>
+                <p>Buat presentasi yang mengesankan dengan tips dan trik PowerPoint dari para ahli. Sisipkan video, animasi, dan lainnya.</p>
+                <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+              </div>
+            </div>
+          </section>
+
+            <!-- Sport -->
+
+            <section id="newSlide">
+                <div class="wrapper-tech" id="sportSlide">
+              <div class="course-card">
+                <img src="img/Person/sport1.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>TAEKWONDO</h1>
+                  <h4>$45</h4>
+                  <p>Pelajari teknik dasar taekwondo dari Sabuk Putih hingga Sabuk Hitam dari instruktur bersertifikat.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/sport.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>BASKET</h1>
+                  <h4>$45</h4>
+                  <p>Tingkatkan permainan basket Anda dengan pelatihan yang dipersonalisasi dari pelatih NBA.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/sport3.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>TENIS</h1>
+                  <h4>$45</h4>
+                  <p>Kuasai pukulan tenis dasar dan mahir bermain di lapangan dalam 12 minggu.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                </div>
+              </div>
+            </section>
+  
+              <!-- Cooking -->
+  
+            <section id="newSlide">
+                <div class="wrapper-tech" id="cookingSlide">
+              <div class="course-card">
+                <img src="img/Person/Chef.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>MEMASAK DASAR</h1>
+                  <h4>$45</h4>
+                  <p>Pelajari cara memasak nasi goreng, mie goreng, sup, dan lauk pauk dengan resep tradisional.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/Chef.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>MEMASAK LANJUTAN</h1>
+                  <h4>$45</h4>
+                  <p>Tingkatkan kemampuan memasak Anda dengan mempelajari hidangan internasional dari chef profesional.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/Chef.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>CHEF PROFESIONAL</h1>
+                  <h4>$45</h4>
+                  <p>Siapkan diri menjadi chef profesional dengan sertifikasi memasak internasional.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                </div>
+              </div>
+            </section>
+  
+              <!-- ART -->
+  
+              <section id="newSlide">
+                <div class="wrapper-tech" id="actingSlide">
+              <div class="course-card">
+                <img src="img/Person/art3.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>SENI DASAR</h1>
+                  <h4>$45</h4>
+                  <p>Pelajari prinsip-prinsip seni rupa seperti perspektif, anatomi, pencahayaan, dan lainnya.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/art2.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>SENI DIGITAL</h1>
+                  <h4>$45</h4>
+                  <p>Kuasai software desain grafis seperti Adobe Photoshop, Illustrator, dan InDesign.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+              <div class="course-card">
+                <img src="img/Person/art1.jpg" alt="course">
+                <div class="course-textbox">
+                  <h1>SENI KANVAS</h1>
+                  <h4>$45</h4>
+                  <p>Belajar melukis di atas kanvas dengan berbagai media seperti cat air, cat minyak, dan lainnya.</p>
+                  <a href="#" class="course-btn">Gabung Kursus <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                </div>
+              </div>
+            </section>
+           
+            <center>
+              <button class="less-btn" id="less" onclick="lessBtn()">Load Less <i class="fa-solid fa-arrow-up"></i></button>
+            </center>
+
+          </div>
+          <center>
+            <button class="more-btn" id="more" onclick="moreBtn()">Load More <i class="fa-solid fa-arrow-down"></i></button>
+          </center>
+        </div>
+        <!-- Course end-->
+
+
+     <!-- Customer Testimoni Start -->
+    
+     <section id="customer">
+        <div class="customer-wrapper">
+        <div class="customer-card-wrapper" id="testimonias">
+          <div class="customerSlideLeft">
+            <h1>Testimoni</h1>
+            <div class="linebox">
+              <div class="marble"></div>
+            </div>
+
+            <!-- user Testimoni -->
+            <div class="testimoni-wrapper"  id="activeUser1">
+              <img src="img/Person/Avatar1.jpg" width="80" height="80">
+              <div class="username"> 
+                <h2>John123</h2>
+                <p>Siswa kursus Excel</p>
+              </div>
+            </div>
+            <div class="testimoni-wrapper"  id="activeUser2">
+              <img src="img/Person/Avatar2.jpg" width="80" height="80">
+              <div class="username">
+                <h2>Jane555</h2>
+                <p>Siswa kursus memasak</p>
+              </div>
+            </div>
+            <div class="testimoni-wrapper" id="activeUser3">
+              <img src="img/Person/Avatar3.jpg" width="80" height="80">
+              <div class="username">
+                <h2>Bob777</h2>
+                <p>Siswa kursus desain</p>
+              </div>
+            </div>
+          </div>
+          <div class="customerSlideRight">
+            <div class="testimoni-textbox" id="defaultTextBox">
+              <div class="box"></div>
+            </div>
+            <div class="testimoni-textbox" id="user1">
+              <div class="box">
+    
+                <h3>Kursus dan Instruktur yang Kompeten</h3>
+                <div class="star-icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Saya sangat puas dengan kursus Excel ini. Materinya lengkap dengan banyak latihan soal. Instrukturnya juga profesional dan sabar mengajari saya.</p>
+              </div>
+            </div>
+            <div class="testimoni-textbox" id="user2">
+              <div class="box">
+    
+                <h3>Kursus Memasak yang Menyenangkan</h3>
+                <div class="star-icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Chef yang mengajar sangat ramah dan penuh kesabaran. Saya jadi semangat belajar memasak setiap minggu. Makanan hasil masakan sendiri memang paling enak!</p>
+              </div>
+            </div>
+            <div class="testimoni-textbox" id="user3">
+              <div class="box">
+    
+                <h3>Mendalami Dunia Desain</h3>
+                <div class="star-icon">
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                  <i class="fa-solid fa-star"></i>
+                </div>
+                <p>Mentor desain saya membimbing dengan sangat detail hingga saya benar-benar paham tools dan konsep desain grafis modern. Puas sekali mengikuti program ini.</p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Customer Testimoni End -->
+
+
+    <!-- Footer Start -->
+    <footer>
+      <div class="row">
+        <div class="footer-wrapper">
+          <div class="footer-textbox" >
+            <h1><img src="img/Logo/logo.jpg" alt="logo" width="45">GSOFT</h1>
+            <br>
+            <p>Platform kursus online terbaik di Indonesia.</p>
+            <h4>Dibuat oleh GSOFT dengan 💖 &copy; 2023</h4>
+          </div>
+       
+          <div class="footer-textbox">
+            <div class="contact-box">
+              <h1>Hubungi Kami</h1>
+              
+              <i class="fa-solid fa-envelope-circle-check"></i>
+              <input type="email"  placeholder="bjir@gmail.com">
+              <div class="linebox">
+                <div class="marble"></div>
+              </div>
+                   <div class="contact-icon">
+                    <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fa-brands fa-github"></i></a>
+                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer End -->
+  </div>     
+</section>
+
+
+    
+    <!-- script -->
+    <script src="js/App.js"></script>
+
+    <!-- Course Script -->
+    <script src="js/course.js"></script>
+  </body>
+</html>
